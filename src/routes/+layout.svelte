@@ -4,8 +4,6 @@
 	import { page } from '$app/state';
 	import '../app.css';
 
-	let { children } = $props();
-
 	const examples = [
 		{ label: 'Counter', path: '01-counter' },
 		{ label: 'Temperature converter', path: '02-temperature-converter' },
@@ -16,6 +14,7 @@
 		{ label: 'Cells', path: '07-cells' }
 	];
 
+	let { children } = $props();
 	let open = $state(false);
 </script>
 
@@ -61,7 +60,7 @@
 	</button>
 
 	{#if open}
-		<aside transition:fly={{ x: '-400px'}}>
+		<aside transition:fly={{ x: '-400px' }}>
 			<div class="nav-container space-y">
 				<div class="title">
 					{@render svelte()}
@@ -70,7 +69,7 @@
 
 				<nav class="grid-gap">
 					{#each examples as { label, path }, i}
-          				{@const current = page.params.example === path ? 'page' : undefined}
+						{@const current = page.params.example === path ? 'page' : undefined}
 						<a href="/examples/{path}" aria-current={current}>
 							{i + 1}. {label}
 						</a>
@@ -130,8 +129,6 @@
 			font-weight: 600;
 			text-decoration: none;
 			text-transform: capitalize;
-
-			
 		}
 	}
 </style>
