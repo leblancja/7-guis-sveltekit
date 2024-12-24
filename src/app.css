@@ -1,0 +1,43 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-content: center;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.flex-gap {
+    --gap: 0.5rem;
+    display: flex;
+    gap: var(--gap)
+}
+
+.grid-gap {
+    --gap:0.5rem;
+    display: grid;
+    gap: var(--gap);
+}
+
+.flex-center {
+    --gap:0.5rem;
+    display: flex;
+    place-content: center;
+    gap: var(--gap);
+}
+
+.space-x > * + * {
+    --gap: 1rem;
+    margin-block-start: var(--gap);
+}
+
+.space-y > * + * {
+    --gap: 1rem;
+    margin-block-start: var(--gap);
+}
