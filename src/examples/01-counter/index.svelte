@@ -3,6 +3,7 @@
 </script>
 
 <div class="container space">
+    <h1>Counter</h1>
     <input type="text" bind:value={counter} readonly>
     
     <div class="button-group">
